@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+    <script src="/scripts/3-13.module.js" type="module"></script>
+    <script>
+      // ES6 - EcmaScript 6버전에 추가된
+      // Module
+      log("log로 메시지 출력");
+      error("error로 메시지 출력");
+    </script>
+    
+    <!-- import를 통해서 내가 지정한 스크립트 불러오기 
+      export한 애들은 import를 통해 불러올 수 있음-->
+    <script type="module">
+      import {log, error, PI} from "/scripts/3-13.module.js";
+      log(PI);
+      log("log로 메시지 출력 2");
+      error("error로 메시지 출력 s3");
+  
+    </script>
+    <!-- src를 통해 자바스크립트를 삽입  -->
+    <script src="/scripts/3-13.ref.js" type="module"></script>
+    <script>
+    </script>
+</body>
+</html>

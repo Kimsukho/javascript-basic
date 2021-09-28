@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // Strict Mode
+    // : 기존에 변수를 선언할때 var를 쓰지 않아도 에러가 발생하지 않았는데
+    // 이를 검사하기 위해 strict를 사용함.
+    // 즉, 자바스크립트 문법을 엄격하게 관리하는 모드
+
+    // strict를 사용하겠다고 선언
+    x = 3.14;
+    
+    console.log(x);   // x is not defined
+
+    function myFunction(){
+      "use strict";
+
+      y = 2;
+
+    }
+  
+    myFunction(); // y is not defined
+
+  </script>
+</body>
+</html>

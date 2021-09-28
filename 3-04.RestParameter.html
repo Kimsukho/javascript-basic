@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+        // ES6 - EcmaScript 6버전에 추가된
+        // Rest Parameter
+        // : parameter로 전달되는 인자가 몇 개인지 확실하지 않을 때 사용
+        
+        // function sum(x1, x2) {
+        //     var y = x1 + x2;
+        //     console.log(y);
+
+        //     return y;
+        // }
+
+        // sum(5,7);
+
+        // 4개의 변수 더하기
+        // function sum(x1, x2, x3, x4) {
+        //   var y = x1 + x2 + x3 + x4;
+        //   console.log(y);
+
+        //   return y;
+        // }
+
+        // sum(5,7,3,9);
+
+        // 
+        // function sum(...args) {
+        //     var total = 0;
+        //     for(var x of args) {
+        //       total += x;
+        //     }
+        //     console.log(total);
+        //     return total;
+        // }
+        // sum(3,2,5,7,4,23);  // 44 
+
+        function sum(...args) {
+            var total = 0;
+            for(var x of args) {
+              total += x;
+            }
+
+            // 배열인 경우 forEach()
+            args.forEach(function(x, index){
+                console.log(index + "번째: "+ x); // 배열의 index값을 출력
+                total += x;
+            });
+            console.log(total);
+            return total;
+        }
+
+        sum(3,2,5,7,4,23);
+        // sum(3,2);
+        // sum(3);
+    </script>
+</body>
+</html>

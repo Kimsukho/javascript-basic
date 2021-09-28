@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var txt = "ABCDEFGHIJKLMN";
+        console.log(txt.length);    // 글자 길이
+
+        // indexOf
+        // : 찾고자 하는 글자의 시작 index 반환
+        var str = "Please locate where 'locate'";
+        console.log(str.indexOf("John"));
+
+        if(str.indexOf("John") > -1) {
+            console.log("locate문자 발견");
+        }
+
+        // lastIndexOf
+        // : 문자열에서 찾고자 하는 글자를 가장 마지막에 찾은 index 반환
+        console.log(str.lastIndexOf("locate"));
+
+        console.log(str.search("locate"));
+
+        // slice
+        // : 문자열에서 start ~ end에 해당하는 index의 문자열을 자르기 가능
+        var str = "Apple, Banana, Kiwi";
+        // console.log(str.slice(7, 13));
+        // console.log(str.slice(7));
+        // console.log(str.slice(-12, -6));
+
+        // substring (=slice와 같은 기능)
+        console.log(str.substring(7, 13));
+
+        // substr
+        // : 문자열에서 start부터 가져올 글자 길이를 가져온다.
+        console.log(str.substr(7, 6));
+
+        var birthday = "970527";
+        console.log(birthday.substr(0,2));
+        console.log(birthday.substr(2,2));
+
+        var birthday = "1997-05-27";
+        console.log(birthday.substring(0,birthday.indexOf("-")));
+
+        // replace
+        // : 해당 문자열에서 바꾸고자 하는 문자를 대체문자로 바꾸는 것
+        // var str = "Please visit here!";
+        // var str2= str.replace("here", "there");
+        // console.log(str2)
+
+        // var str = "Please visit here here here!";
+        // var str2 = str.replace("here","there");
+        // console.log(str2);
+ 
+        var str = "Please visit here HERE here!";
+        var str2 = str.replace(/here/gi,"there"); // /here/gi : 정규식, 전체에서 here라는 문자를 찾아 다 바꿔라
+        console.log(str2);
+
+        // uppercase
+        // : 전체 문자 대문자로 변경
+        console.log(str.toUpperCase());
+
+        // lowercase
+        // : 전체 문자 소문자로 변경
+        console.log(str.toLowerCase());
+
+        // john
+        // JOHN
+        //
+        // 데이터베이스 john, John
+        
+        // concat
+        // : 문자열 합치기
+        var txt1 = "Hello";
+        var txt2 = "World";
+        var txt3 = txt1 + " " + txt2;
+        console.log(txt3);
+        var txt4 = txt1.concat(" ", txt2); // Hello World
+        console.log(txt4)                  // HelloWorld
+
+        // trim
+        // : 문자열의 공백을 없애줌.
+        var str = "             Hello World!";
+        console.log(str.trim());
+        console.log(str);
+
+        // padStart
+        // : 주어진 문자열에 앞에 a를 넣어 n의 길이만큼 만들어라
+        var str = "15";
+        console.log(str.padStart(4, 0));    // 0015
+        
+        // padEnd
+        console.log(str.padEnd(4,0));
+
+        // charAt
+        var str = "Hello world";
+        console.log(str.charAt(1));
+
+        // split
+        // : 문자열에서 해당 문자를 찾아 자르는 기능
+        var tags = "키보드, 기계식, 블루투스";
+        var arr = tags.split(",");
+        console.log(arr);
+
+        var birthday = "1997-06-12";
+        var arr2 = birthday.split("-");
+        console.log(arr2);
+
+    </script>   
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Number
+        
+        var x = 123;
+        // toString();
+        // : 숫자를 문자열로 변환해주는 것
+        console.log(x.toString());
+        console.log(x.toString(2));     // x=123인 값을 2진수로 변환
+
+        // toFixed()
+        // : 지정된 소수점 자리수까지 반올림으로 표기
+        var x = 123999.567243;
+        console.log(x.toFixed(2));     // 123999.57
+
+        // toPrecision()
+        // : 지정된 소수점 자리에서 반올림하여 값을 반환
+        var x = 9.545;
+        console.log(x.toPrecision(2)); // 9.5
+
+        var x = Number("10");          // 숫자 10
+        var x = Number(true);          // 1
+        var x = Number(false);         // 0
+        console.log(Number(" 10  "));
+        console.log(Number("3.14"));
+        console.log(Number(" 10"));
+        console.log(Number(" 10.33"));
+        console.log(Number(" 10,33")); // NaN
+        console.log(Number("John"));   // NaN
+        console.log(Number("10 33"));  // NaN
+        // NaN - Not a Number
+
+        // parseInt()
+        // : 문자열을 숫자로 변환해주는 것(정수형)
+        console.log(parseInt("3"));
+        console.log(parseInt("3.9"));
+        console.log(parseInt("10 33"));
+        console.log(parseInt("12 years"));
+        console.log(parseInt("years 13"));  // NaN
+
+        // parseFloat()
+        // : 문자열을 소수점까지 포함해서 변환해주는 것
+        console.log(parseFloat("10"));
+        console.log(parseFloat("13.9"));
+        console.log(parseFloat("13.9 aa"));
+        
+    </script>
+</body>
+</html>

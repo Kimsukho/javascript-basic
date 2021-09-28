@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // scope
+        // : 변수에 대한 접근성을 의미함
+
+        //local scope
+        function myFunction(){
+            var carName = "Hyundai";
+            console.log(carName);
+        }
+
+        myFunction();
+        
+        // Uncaught ReferenceError: carName is not defined
+        // function 안에 있는 지역변수를 선언했기 때문에 오류 발생
+        // console.log(carName);
+
+        //global scope
+        var carName2 = "KIA";
+
+        // myFunction2을 작성하지 않고 미리 선언해도 에러가 발생하지 않음.
+        // 자바스크립트는 함수를 먼저 해석하기 때문에 에러가 발생하지 않는 것.
+        // myFunction2();
+
+        function myFunction2(){
+            // function 밖에 선언한 변수에 대해 접근 가능함.
+            console.log(carName2);
+        }
+
+        myFunction2();
+        
+        // Uncaught TypeError: myFunction3 is not a function
+        // myFunction3();
+        
+        // 변수에 function을 담아 작성
+        var myFunction3 = function() {
+          console.log(carName2);
+        }
+
+        myFunction3();
+        
+    </script>
+</body>
+</html>

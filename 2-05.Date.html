@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <script>
+        // Date
+        var d = new Date(); // d라는 변수에 함수를 호출한 시점의
+                            // 현재 날짜/시간을 넣는다.
+        console.log(d);
+        // Tue Sep 21 2021 16:30:07 GMT+0900
+
+        // set하기
+        // d.setFullYear(2020);    // 2020년도로 지정
+
+        console.log(moment().format("YYYY-MM-DD"));
+        console.log(moment().format("MMM DD, YYYY"));
+
+        console.log(moment().subtract(7, "days").format("YYYY-MM-DD"));    //2021-09-14
+        console.log(moment().add(7, "days").format("YYYY-MM-DD"));         //2021-09-28
+        console.log(moment().add(4, "hours").format("YYYY-MM-DD HH"));
+
+        // timezone
+        console.log("timezone: ", d.getTimezoneOffset()); 
+        // 분단위 -540분 = -9시간 * -1
+
+
+        var year = d.getFullYear();
+        var utcYear = d.getUTCFullYear();
+        console.log("year :", year);    // 2021
+
+        var month = d.getMonth();
+        var utcMonth = d.getUTCMonth();
+        console.log("month: ", month); // 8 출력 -> 9월
+
+        var day = d.getDate();
+        console.log("day: ", day);     // 21
+
+        var day = d.getDay();
+        console.log("day: ", day);     // 0 - 일요일
+
+        var hour = d.getHours();
+        var minute = d.getMinutes();
+        var second = d.getSeconds();
+    
+        // 타임존
+        // : 각각의 사람마다 살고있는 시간을 바로 반영해주는 것
+        // 2021.09.21 17:07:21  => 2021.09.21 03:07:21
+        // 글제목, 작성자, 작성일 : 2021.09.21 12:07:21
+        // 2021.09.21 08:07:21 (영국 기준)
+
+
+
+        // 자바스크립트는 Day()
+        // month(월) : 0부터 시작, 1월 - 0
+        // date(일) : 1부터 시작, 1 - 1
+        var d = new Date(2021, 3, 27, 11, 14, 23);
+        console.log(d);
+        // Tue Apr 27 2021 11:14:23 GMT+0900
+
+        // 2021-03-21, 2021.03.21
+        // 월 일 년도 - Mar 21, 2021 (미국)
+        var month_en = ["Jan", "Feb", "Mar"];
+
+        //3월인경우 - 2,
+        var mon = 2;
+        console.log(month_en[mon]);
+
+    </script>
+</body>
+</html>

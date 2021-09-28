@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // ES6 - EcmaScript 6버전에 추가된
+        // Template Literals
+
+        // 기존 함수에서 변수 출력 시(코드 복잡 & 문자열 long)
+        function hello(name) {
+            console.log("Hello " + name + ". Welcome!");
+        }
+
+        // 문자열을 간소화하기 위해 Template Literals 사용
+        function hello2(name) {
+            var name2= "John";
+            console.log(`Hello ${name2}. Welcome! ${name}`);
+        }
+
+        hello2("Jeremy");
+    </script>
+</body>
+</html>

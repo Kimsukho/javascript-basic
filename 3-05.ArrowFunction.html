@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // Arrow Function
+
+        // 기본 함수 선언
+        function hello(){
+          console.log("Hello World");
+          return "Hello World";
+        }
+
+        // 변수에다 함수 선언
+        var hello = function() {
+          // console.log("Hello World");
+          return "Hello World";
+        }
+
+        // Arrow Function
+        // var hello = () => {
+        //   console.log("Hello World");
+        //   return "Hello World";
+        // }
+
+        // {} 생략 하고 return 값 바로 넣기
+        // var hello = () => "Hello World";
+        
+        // 던질 파라미터 1개 fulName
+        // var hello = (fullName) => "Hello " + fullName;
+        
+        // 괄호 생략 가능
+        var hello = fullName => "Hello " + fullName;
+        console.log(hello("John Doe"));
+        
+        // 2개의 파라미터를 받을 때
+        // var hello = (firstName, lastName) => "Hello " + firstName + " " + lastName;
+        // console.log(hello("John", "Doe"));
+        
+    </script>
+</body>
+</html>

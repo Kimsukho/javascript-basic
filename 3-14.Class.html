@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 클래스
+    // : 객체를 생성하기 위한 일종의 틀, 설계도
+
+    // 자동차
+    class Car{
+      constructor(modelName, modelYear, type, price) {
+        this.modelName = modelName; // this = class의 객체를 의미함
+        this.modelYear = modelYear;
+        this.type = type;
+        this.price = price;
+      }
+
+      getModelName() {
+        return this.modelName;
+      }
+
+      getModelYear() {
+        return this.modelYear;
+      }
+      
+      getPrice() {
+        return this.price;
+      }
+
+      setPrice(price) {
+        this.price = price;
+      }
+    }
+
+    let car = new Car("ionic", "2021", "e", 4000);
+    console.log(car); // Car {modelName: 'ionic', modelYear: '2021', type: 'e', price: 4000}
+    console.log(car.getModelName());  // ionic
+    console.log(car.getModelYear());  // 2021
+
+    car.setPrice(4100);
+    console.log(car.getPrice());
+
+    let car2 = new Car("genesis", "2021", "g", 6500);
+    console.log(car2.getModelName()); // genesis
+    console.log(car2.getModelYear()); // 2021
+    console.log(car2.getPrice());
+    
+    // extends 상속, Car를 상속 받겠다.
+    // extends : 부모에 구현되있는 것을 직접 사용 가능하다.
+    // implements : 부모의 메소드를 반드시 오버라이딩(재정의)
+    
+    // class ElectronicCar extends Car {
+    //   constructor(modelName, modelYear, price, chargeTime) {
+    //     super(modelName, modelYear, "e", price);
+    //     this.chargeTime = chargeTime;
+    //   }
+
+    //   setChargeTime(time) {
+    //     this.chargeTime = time;
+    //   }
+
+    //   getChargeTime() {
+    //     return this.chargeTime;
+    //   }
+    // }
+
+    class ElectronicCar extends Car {
+      constructor(modelName, modelYear, price) {
+        super(modelName, modelYear, "e", price);
+      }
+
+      setChargeTime(time) {
+        this.chargeTime = time;
+      }
+
+      getChargeTime() {
+        return this.chargeTime;
+      }
+    }
+    // let eleCar1 = new ElectronicCar("ionic5", "2021", 4000, 60);
+
+    let eleCar1 = new ElectronicCar("ionic5", "2021", 4000);
+    eleCar1.setChargeTime(60);
+    console.log(eleCar1.getModelName());
+    console.log(eleCar1.getChargeTime());
+
+
+  </script>
+</body>
+</html>

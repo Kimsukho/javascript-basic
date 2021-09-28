@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 조건문
+        // if, switch
+
+        // if(조건){
+        //  수행할 명령어    
+        // }
+        // 특정조건에 만족이 되어 있을 때 블록안에 코드를 실행함.
+
+        var age = 19;
+        var isAdult = false;
+        
+        if(age > 18){
+            isAdult = true;
+        }
+        // else {
+        //     isAdult = false;
+        // }
+
+        // var hour = 14;
+        // if(hour < 10){
+        //     console.log("Good Morning");
+        // }else if(hour < 18){
+        //     console.log("Good Afternoon");
+        // }else if(hour < 21) {
+        //     console.log("Good Evening");
+        // }else {
+        //     console.log("Good Night");
+        // }
+        
+        // switch 문
+        // 상수값 이용하여 비교할 때 switch문을 사용하는것이 좋다.
+        var d = new Date();
+        // 0 : 일요일, 1: 월요일, 2: 화요일, 3: 수요일, 4: 목요일, 5: 금요일, 6: 토요일
+        var day = d.getDay();
+        console.log(day);
+        var dayName = "";
+
+        if (day == 0){
+            dayName = "일요일";
+        }else if(day == 1){
+            dayName = "월요일";
+        }else if(day == 2) {
+        
+        }else if(day == 3) {
+        
+        }else if(day == 4) {
+        
+        }
+
+        switch (day) {
+            case 0:
+                dayName = "일요일";
+                break;
+            case 1:
+                dayName = "월요일";
+                break;
+            case 2:
+                dayName = "화요일";
+                break;
+            case 3:
+                dayName = "수요일";
+                break;
+            case 4:
+                dayName = "목요일";
+                break;
+            case 5:
+                dayName = "금요일";
+                break;
+            case 6:
+                dayName = "토요일";
+                break;
+            default:
+                dayName = "";
+                break;
+        }
+
+        console.log(dayName);
+
+    </script>
+</body>
+</html>

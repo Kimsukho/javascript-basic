@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <input type="text"id="searchText" onkeydown="checkEnter(event);"/> <button type="button" onclick="doSearch();">조회</button>
+  <table id="tb">
+    <thead>
+      <tr>
+        <th onclick="doSort('name');">name</th>
+        <th onclick="doSort('email');">email</th>
+        <th onclick="doSort('company');">company</th>
+        <th onclick="doSort('address');">address</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <script src="/scripts/4-04.user_data.js"></script>
+  <script>
+    
+    var currentData = [];
+    
+    // name, email, company, address 정렬
+    function doSort(key){
+      currentData.sort(function(a,b){
+        // a가 b보다 크면 1, a가 b보다 작으면 -1, 같으면 0
+        return a[key]>b[key]? 1: a[key]<b[key]?-1 : 0;
+      });
+
+      renderTable(currentData);
+    }
+
+    // input에 엔터키 누를 시 Search() 함수 실행
+    function checkEnter(event){
+      if(event.keyCode == 13){
+        console.log("Enter");
+        doSearch();
+      }      
+    }
+    
+    function doSearch(){
+      var searchText = document.getElementById("searchText").value;
+      
+      // searchText 빈문자열
+      if(searchText == ""){
+        currentData = userList;
+        renderTable(userList);
+      }else{
+        // 정규식 객체 생성 : RegExp(a, b) a = 패턴(찾을 키워드), b = g or i 
+        var regExp = new RegExp(searchText,"i");
+        var data = userList.filter(item => {
+          if(regExp.test(item.name)) {
+            return true;            
+          }else if(regExp.test(item.email)) {
+            return true;            
+          }else if(regExp.test(item.address)) {
+            return true;
+          }else {
+            return false;
+          }
+        });
+        currentData = data;
+
+        renderTable(data);
+      }
+    }
+
+    function renderTable(data){
+      var h = [];
+      // 배열의 foreach() 함수 사용 
+      data.forEach(item => {
+        h.push(`<tr>`);
+        h.push(`<td>${item.name}</td>`);
+        h.push(`<td>${item.email}</td>`);
+        h.push(`<td>${item.company}</td>`);
+        h.push(`<td>${item.address}</td>`);
+        h.push(`</tr>`);
+      });
+      // querySelector, 문자열 합치기 join
+      document.querySelector("#tb>tbody").innerHTML = h.join("");
+    }
+
+    
+  </script>
+</body>
+</html>
